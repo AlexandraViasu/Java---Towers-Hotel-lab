@@ -1,7 +1,7 @@
-public class ConferenceRoom extends Room{
+public class ConferenceRoom {
     private String name;
-    public ConferenceRoom(RoomType roomType) {
-        super(roomType);
+    public ConferenceRoom(String name) {
+        this.name = name;
     }
 
     public String getName() {
