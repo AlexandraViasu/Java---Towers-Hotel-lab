@@ -2,14 +2,13 @@ import java.util.ArrayList;
 
 public abstract class Room {
 
-    private RoomType roomType;
-    private ArrayList<String> collection;
+    private int capacity;
+    private ArrayList<String> guests;
 
 
-    public Room(RoomType roomType) {
-
-        this.roomType = roomType;
-
+    public Room(int capacity, ArrayList<String> guests) {
+        this.capacity = capacity;
+        this.guests = guests;
     }
 
     public RoomType getRoomType() {
@@ -17,6 +16,6 @@ public abstract class Room {
     }
 
     public int getCapacity() {
-        return roomType.getCapacity();
+        return guests.getCapacity();
     }
 }

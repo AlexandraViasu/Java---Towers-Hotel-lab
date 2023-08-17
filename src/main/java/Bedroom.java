@@ -3,13 +3,19 @@ import java.util.ArrayList;
 public class Bedroom extends Room{
 
     private int number;
-    public Bedroom(RoomType roomType, int number) {
-        super(roomType);
+    private RoomType type;
+    public Bedroom(int number, RoomType roomType) {
+        super(roomType.getCapacity());
         this.number = number;
+        this.type = roomType;
     }
 
     public int getNumber() {
         return number;
+    }
+
+    public RoomType getType() {
+        return type;
     }
 
     public void setNumber(int number) {

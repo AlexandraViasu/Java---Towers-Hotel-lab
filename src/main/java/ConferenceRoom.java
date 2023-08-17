@@ -1,6 +1,7 @@
 public class ConferenceRoom {
     private String name;
-    public ConferenceRoom(String name) {
+    public ConferenceRoom(int capacity, String name) {
+        super(capacity);
         this.name = name;
     }
 
@@ -8,7 +9,4 @@ public class ConferenceRoom {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 }
