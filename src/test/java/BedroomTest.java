@@ -6,6 +6,8 @@ import static org.junit.Assert.assertEquals;
 public class BedroomTest {
 
     Bedroom bedroom;
+    Guest guest1;
+    Guest guest2;
 
     @Before
     public void before() {
