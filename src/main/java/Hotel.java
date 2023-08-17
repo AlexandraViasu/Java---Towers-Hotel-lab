@@ -2,49 +2,38 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Hotel {
-    private ArrayList<String> bedroom;
-    private ArrayList<String> conferenceRoom;
+    private ArrayList<Bedroom> bedrooms;
+    private ArrayList<ConferenceRoom> conferenceRooms;
 
-    public Hotel(ArrayList<String> bedroom, ArrayList<String> conferenceRoom) {
-        this.bedroom = bedroom;
-        this.conferenceRoom = conferenceRoom;
-
-    }
-
-    public ArrayList<String> getBedroom() {
-        return bedroom;
-    }
-
-    public void setBedroom(ArrayList<String> bedroom) {
-        this.bedroom = bedroom;
-    }
-
-    public ArrayList<String> getConferenceRoom() {
-        return conferenceRoom;
-    }
-
-    public void setConferenceRoom(ArrayList<String> conferenceRoom) {
-        this.conferenceRoom = conferenceRoom;
-    }
-
-    public void checkinBedroom(String[] guest) {
-        HashMap<String, String> bedroom = new HashMap<>();
-        bedroom.put("Alex", "non-smoker");
-    }
-    public void checkoutBedroom(String[] guest) {
-        HashMap<String, String> bedroom = new HashMap<>();
-        bedroom.remove("Alex", "non-smoker");
-    }
-
-    public void checkinConferenceRoom(String[] guest) {
-        HashMap<String, String> conferenceRoom = new HashMap<>();
-        conferenceRoom.put("Alex", "non-smoker");
+    public Hotel() {
+        this.bedrooms = new ArrayList<Bedroom>();
+        this.conferenceRooms = new ArrayList<ConferenceRoom>();
 
     }
-    public void checkoutConferenceRoom(String[] guest) {
-        HashMap<String, String> conferenceRoom = new HashMap<>();
-        conferenceRoom.remove("Alex", "non-smoker");
+    public void addBedroom(Bedroom bedroom) {
+        this.bedrooms.add(bedroom);
     }
 
+    public void addConferenceRoom(ConferenceRoom conferenceRoom){
+        this.conferenceRooms.add(conferenceRoom);
+    }
+    public Bedroom findBedroom(int roomNumber) {
+        Bedroom foundRoom = null;
+        for (Bedroom bedroom : this.bedrooms) {
+            if (bedroom.getNumber() == roomNumber) {
+                foundRoom = bedroom;
+            }
+        }
+        return foundRoom;
+    }
+    public ConferenceRoom findConferenceRoom(String roomName) {
+        ConferenceRoom foundRoom = null;
+        for (ConferenceRoom conferenceRoom: this.conferenceRooms) {
+            if (conferenceRoom.getName() == roomName) {
+                foundRoom = conferenceRoom;
+            }
+        }
+        return foundRoom;
+    }
 
 }
