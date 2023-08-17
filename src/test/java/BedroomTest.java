@@ -14,8 +14,13 @@ public class BedroomTest {
     }
 
     @Test
-    public void hasNumber() {
+    public void canGetNumber() {
         assertEquals(1, bedroom.getNumber());
     }
 
+    @Test
+    public void canSetNumber() {
+        bedroom.setNumber(2);
+        assertEquals(2, bedroom.getNumber());
+    }
 }
